@@ -1,4 +1,4 @@
-package com.zz.thread;
+package com.zz.ThreadClass;
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;

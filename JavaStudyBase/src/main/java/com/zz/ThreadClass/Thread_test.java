@@ -1,6 +1,9 @@
-package com.zz.thread;
+package com.zz.ThreadClass;
 
+import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
+
+import static java.lang.Thread.sleep;
 
 /**
  * @author zz
@@ -21,7 +24,8 @@ public class Thread_test {
 }
 
 class Employee {//员工类
-    private int num = 20;
+
+    private int num =new Scanner(System.in).nextInt();
     void bought() {//购买商品方法
         while (true) {
             synchronized (this){
@@ -29,7 +33,7 @@ class Employee {//员工类
                     this.notifyAll();
 //                    System.out.println(Thread.currentThread().getName() + "正在购买商品...");
                     try {
-                        Thread.sleep(2000);
+                        sleep(2000);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -50,12 +54,18 @@ class Employee {//员工类
         }
     }
     void makefood() {
+        System.out.println(Thread.currentThread().getName() + "开始制作食物...");//开始制作食物
         while (true) {
             synchronized (this){
                 if(num < 20){
                     this.notifyAll();
 //                    System.out.println(Thread.currentThread().getName() + "正在制作食物...");//制作食物
                     num++;
+                    try {
+                        sleep(200);
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
 
                 }else {
 //                this.notifyAll();

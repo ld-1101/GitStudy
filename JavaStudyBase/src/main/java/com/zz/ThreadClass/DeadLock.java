@@ -1,4 +1,4 @@
-package com.zz.thread;
+package com.zz.ThreadClass;
 //死锁的演示
 class A {
 	public synchronized void foo(B b) { //同步监视器：A类的对象：a

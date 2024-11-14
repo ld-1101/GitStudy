@@ -1,4 +1,4 @@
-package com.zz.thread;
+package com.zz.ThreadClass;
 
 /**
  *  线程测试类

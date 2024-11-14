@@ -1,4 +1,4 @@
-package com.zz.thread;
+package com.zz.ThreadClass;
 
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -65,7 +65,7 @@ class MyThread2 implements Runnable {
     }
     Thread customerThread = new Thread("消费者线程"){
 
-        MyThread myThread = new MyThread();
+        CallThread callThread = new CallThread();
         @Override
         public void run() {
 
